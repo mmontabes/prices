@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  title: Consulta de precios
+  description: API para consultar precios de productos por fecha y cadena
+  version: 1.0.0
+  contact:
+    email: miguel.montabes@ext.healthincode.com
+
+paths:
+  /consulta-precios:
+    get:
+      tags:
+        - prices
+      summary: Consultar precios
+      operationId: searchPrices
+      parameters:
+        - name: applicationDate
+          in: query
+          description: Fecha de aplicación
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: productId
+          in: query
+          description: Identificador del producto
+          required: true
+          schema:
+            type: integer
+        - name: brandId
+          in: query
+          description: Identificador de la cadena
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceResponse'
+
+components:
+  schemas:
+
+    PriceResponse:
+        properties:
+          productId:
+            type: integer
+          brandId:
+            type: integer
+          priceList:
+            type: number
+          applicationDate:
+            type: array
+            items:
+              type: string
+              format: date
+          price:
+            type: number
