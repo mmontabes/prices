@@ -30,8 +30,9 @@ public class PriceRepositoryAdapter implements PriceRepositoryPort {
             return Optional.empty();
         }
 
-        // Sort the list by priority in descending order
-        prices.sort((p1, p2) -> p1.getPriority() - p2.getPriority());
+        // Sort the list by priority in ascending order
+        prices.sort((p1, p2) -> Integer.compare(p2.getPriority(), p1.getPriority()));
+
 
 
         PriceEntity priceEntity = prices.get(0);

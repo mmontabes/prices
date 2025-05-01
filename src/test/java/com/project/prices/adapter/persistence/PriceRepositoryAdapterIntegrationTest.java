@@ -26,7 +26,7 @@ class PriceRepositoryAdapterIntegrationTest {
         Optional<Price> result = priceRepositoryAdapter.findApplicablePrice(date, productId, brandId);
 
         assertTrue(result.isPresent());
-        assertEquals(new BigDecimal("35.50"), result.get().getPrice()); // priority más alto
+        assertEquals(new BigDecimal("25.45"), result.get().getPrice()); // priority más alto
     }
 
     @Test

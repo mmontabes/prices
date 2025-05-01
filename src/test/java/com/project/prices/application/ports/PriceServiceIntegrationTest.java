@@ -29,7 +29,7 @@ class PriceServiceIntegrationTest {
         Price result = priceService.getPrice(date, productId, brandId);
 
         assertNotNull(result);
-        assertEquals(new BigDecimal("35.50"), result.getPrice()); // price de price_list 2
+        assertEquals(new BigDecimal("25.45"), result.getPrice()); // price de price_list 2
     }
 
     @Test
@@ -42,4 +42,6 @@ class PriceServiceIntegrationTest {
                 priceService.getPrice(date, productId, brandId)
         );
     }
+
+
 }
