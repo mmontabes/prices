@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
-// Endpoint that allows retrieving the applicable price for a product on a specific date and brand.
+
 @RestController
 @RequestMapping("/api/prices")
 public class PriceController {

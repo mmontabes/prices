@@ -107,8 +107,8 @@ class PriceControllerIntegrationTest {
     @Test
     void shouldReturn404_whenNoPriceFound() throws Exception {
         mockMvc.perform(get("/api/prices")
-                        .param("date", "2020-06-20T10:00:00")  // fuera de rango
-                        .param("productId", "99999")           // producto inexistente
+                        .param("date", "2020-06-20T10:00:00")  // out of range
+                        .param("productId", "99999")           //non-existing product
                         .param("brandId", "999"))
                 .andExpect(status().isNotFound());
     }
@@ -123,7 +123,7 @@ class PriceControllerIntegrationTest {
     @Test
     void shouldReturn400_whenDateIsMalformed() throws Exception {
         mockMvc.perform(get("/api/prices")
-                        .param("date", "2020/06/14 10:00")  // mal formado
+                        .param("date", "2020/06/14 10:00")  // wrong format
                         .param("productId", "35455")
                         .param("brandId", "1"))
                 .andExpect(status().isBadRequest());
