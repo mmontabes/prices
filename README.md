@@ -53,10 +53,10 @@ The project follows a hexagonal architecture where:
 
 ### Steps to launch
 
-git clone https://github.com/mmontabes/prices.git
-cd prices
-mvn clean install
-mvn spring-boot:run
+- git clone https://github.com/mmontabes/prices.git
+- cd prices
+- mvn clean install
+- mvn spring-boot:run
 
 
 ## REST API Usage
